@@ -1,16 +1,6 @@
 {
   "users": [
     {
-      "id": "b006",
-      "username": "gizem",
-      "password": "1"
-    },
-    {
-      "id": "9bab",
-      "username": "enesbayram166@gmail.com",
-      "password": "123456"
-    },
-    {
       "id": "87088",
       "username": "enes",
       "password": "1",
@@ -26,6 +16,12 @@
       "id": "119955",
       "username": "burak.trgutts",
       "password": "asdad",
+      "balance": 1000
+    },
+    {
+      "id": "35662",
+      "username": "kapalak07",
+      "password": "2w",
       "balance": 1000
     }
   ]
