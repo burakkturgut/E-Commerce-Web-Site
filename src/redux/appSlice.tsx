@@ -24,7 +24,7 @@ const appSlice = createSlice({
         setLoading: (state: AppSliceType, actions: PayloadAction<boolean>) => {
             state.loading = actions.payload;
         },
-        setCurrentUser: (state: AppSliceType, actions: PayloadAction<UserType>) => {
+        setCurrentUser: (state: AppSliceType, actions: PayloadAction<UserType | null>) => {
             state.currentUser = actions.payload;
         },
         setProduct: (state: AppSliceType, actions: PayloadAction<ProductType[]>) => {
