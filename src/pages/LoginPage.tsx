@@ -10,15 +10,10 @@ import '../css/LoginPage.css'
 import loginPageService from '../services/LoginPageService';
 import { useDispatch } from 'react-redux';
 import { setCurrentUser, setLoading } from '../redux/appSlice';
-import type { UserType } from '../types/Types';
+import type { UserType, CheckUserType } from '../types/Types';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
-
-interface CheckUserType {
-    result: boolean,
-    currentUser: UserType | null
-}
 
 function LoginPage() {
 

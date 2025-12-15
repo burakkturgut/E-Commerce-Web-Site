@@ -1,17 +1,19 @@
 // Bütün uygulama genelindeki ortak sliceları buraya uygulayacağım
 
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
-import type { UserType } from '../types/Types'
+import type { ProductType, UserType } from '../types/Types'
 
 export interface AppSliceType {
     currentUser: UserType | null,
-    loading: boolean
+    loading: boolean,
+    product: ProductType[]
 }
 
 
 const initialState: AppSliceType = {
     currentUser: null,
-    loading: false
+    loading: false,
+    product: []
 }
 
 
@@ -24,10 +26,12 @@ const appSlice = createSlice({
         },
         setCurrentUser: (state: AppSliceType, actions: PayloadAction<UserType>) => {
             state.currentUser = actions.payload;
+        },
+        setProduct: (state: AppSliceType, actions: PayloadAction<ProductType[]>) => {
+            state.product = actions.payload
         }
-
     }
 })
-export const { setLoading, setCurrentUser } = appSlice.actions
+export const { setLoading, setCurrentUser, setProduct } = appSlice.actions
 
 export default appSlice.reducer
