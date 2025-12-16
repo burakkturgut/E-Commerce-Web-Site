@@ -1,16 +1,12 @@
-import React from 'react'
 import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 import ecommerce from '../images/ecommerce.png';
 import { useNavigate } from 'react-router-dom';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
-import { BsPersonCircle } from 'react-icons/bs';
 import { useDispatch } from 'react-redux';
 import { setCurrentUser } from '../redux/appSlice';
 import { toast } from 'react-toastify';

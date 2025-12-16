@@ -15,7 +15,7 @@ function ProductCard(props: ProductCardProps) {
     const { id, title, price, description, category, image, rating } = props.product;
 
     return (
-        <Card sx={{ cursor: 'pointer', boxShadow: '1px 2px 5px lightblue', width: '330px', height: '600px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyItems: 'center', margin: '60px 10px' }}>
+        <Card sx={{ cursor: 'pointer', boxShadow: '1px 5px 5px lightblue', width: '330px', height: '600px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyItems: 'center', margin: '60px 10px' }}>
             <img src={image} width={230} height={230} />
             <CardContent sx={{ height: '250px' }}>
                 <Typography gutterBottom variant="h5" component="div">

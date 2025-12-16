@@ -12,7 +12,6 @@ class ProductService {
                 .catch((error: any) => reject(error))
         })
     }
-
 }
 
 export default new ProductService();
