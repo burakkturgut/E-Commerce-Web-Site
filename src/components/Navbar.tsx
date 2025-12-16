@@ -8,8 +8,10 @@ import { useNavigate } from 'react-router-dom';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import { useDispatch } from 'react-redux';
-import { setCurrentUser } from '../redux/appSlice';
+import { filterProduct, setCurrentUser, setProduct } from '../redux/appSlice';
 import { toast } from 'react-toastify';
+import productServise from '../services/ProductServise';
+import type { ProductType } from '../types/Types';
 
 function Navbar() {
     const navigate = useNavigate()
@@ -21,6 +23,19 @@ function Navbar() {
         dispatch(setCurrentUser(null))
         navigate("/login")
         toast.success("Çıkış Başarılı")
+    }
+
+    const handleFilter = async (e: React.ChangeEvent<HTMLInputElement>) => {
+        try {
+            if (e.target.value) {
+                dispatch(filterProduct(e.target.value))
+            } else {
+                const product: ProductType[] = await productServise.getAllProduct()
+                dispatch(setProduct(product))
+            }
+        } catch (error) {
+            toast.error("Filtreleme yaparken hata oluştu" + error)
+        }
     }
 
     return (
@@ -41,6 +56,7 @@ function Navbar() {
                 </Typography>
                 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
                     <TextField
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleFilter(e)}
                         sx={{ width: '300px', marginBottom: '25px' }}
                         id="searchInput"
                         placeholder='Arama yapınız...'
