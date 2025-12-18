@@ -7,18 +7,23 @@ import ecommerce from '../images/ecommerce.png';
 import { useNavigate } from 'react-router-dom';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { filterProduct, setCurrentUser, setProduct } from '../redux/appSlice';
 import { toast } from 'react-toastify';
 import productServise from '../services/ProductServise';
 import type { ProductType } from '../types/Types';
 import { FaBasketShopping } from "react-icons/fa6";
 import Badge from '@mui/material/Badge';
+import type { RootState } from '../redux/store';
+
+
 
 
 function Navbar() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
+
+    const { basket } = useSelector((state: RootState) => state.basket)
 
 
     const logout = () => {
@@ -78,7 +83,7 @@ function Navbar() {
                         }
                         variant="standard"
                     />
-                    <Badge badgeContent={4} color='warning' sx={{ margin: '0px 10px' }}>
+                    <Badge badgeContent={basket.length} color='warning' sx={{ margin: '0px 10px' }}>
                         <FaBasketShopping style={{ fontSize: '18', cursor: 'pointer' }} />
                     </Badge>
                     <Button onClick={logout} sx={{ textTransform: 'none', color: 'lightgrey' }} color="inherit">Çıkış Yap</Button>
