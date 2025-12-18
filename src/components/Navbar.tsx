@@ -12,6 +12,9 @@ import { filterProduct, setCurrentUser, setProduct } from '../redux/appSlice';
 import { toast } from 'react-toastify';
 import productServise from '../services/ProductServise';
 import type { ProductType } from '../types/Types';
+import { FaBasketShopping } from "react-icons/fa6";
+import Badge from '@mui/material/Badge';
+
 
 function Navbar() {
     const navigate = useNavigate()
@@ -75,6 +78,9 @@ function Navbar() {
                         }
                         variant="standard"
                     />
+                    <Badge badgeContent={4} color='warning' sx={{ margin: '0px 10px' }}>
+                        <FaBasketShopping style={{ fontSize: '18', cursor: 'pointer' }} />
+                    </Badge>
                     <Button onClick={logout} sx={{ textTransform: 'none', color: 'lightgrey' }} color="inherit">Çıkış Yap</Button>
                 </div>
             </Toolbar>

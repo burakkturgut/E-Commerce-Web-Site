@@ -1,21 +1,13 @@
 // Bütün uygulama genelindeki ortak sliceları buraya uygulayacağım
 
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
-import type { ProductType, UserType } from '../types/Types'
-
-export interface AppSliceType {
-    currentUser: UserType | null,
-    loading: boolean,
-    product: ProductType[]
-}
-
+import type { ProductType, UserType, AppSliceType } from '../types/Types'
 
 const initialState: AppSliceType = {
     currentUser: null,
     loading: false,
     product: []
 }
-
 
 const appSlice = createSlice({
     name: "app",

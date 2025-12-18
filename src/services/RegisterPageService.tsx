@@ -7,7 +7,7 @@ class RegisterPageService {
     // Amaç componentlerde axios yazmamak ve temiz sürdürülebilir kod üretmek
     register(newUser: UserType): Promise<any> {
         return new Promise((resolve: any, reject: any) => {  //bir promise yapısı tanımladım başarılıysa resolve başarısızsa reject dönecek
-            axios.post("/users", newUser)
+            axios.post("/users", newUser) // newUser diyerek artık jsonserver'a yeni kullanıcımı attım.
                 .then((response: AxiosResponse<any, any>) => resolve(response.data))
                 .catch((error: any) => reject(error));
         })

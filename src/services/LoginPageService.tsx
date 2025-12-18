@@ -6,7 +6,7 @@ class LoginPageService {
 
     login(): Promise<UserType[]> {
         return new Promise((resolve: any, reject: any) => {
-            axios.get("/users")
+            axios.get("/users") // kendi oluşturduğumuz axiosa users ile kullanıcıları cekme işlemi gerçekleşti
                 .then((response: AxiosResponse<any, any>) => resolve(response.data))
                 .catch((error: any) => reject(error))
         })

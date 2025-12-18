@@ -26,3 +26,9 @@ interface RatingType {
     rate: number,
     count: number
 }
+
+export interface AppSliceType {
+    currentUser: UserType | null,
+    loading: boolean,
+    product: ProductType[]
+}
