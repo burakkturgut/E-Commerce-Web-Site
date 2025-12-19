@@ -11,6 +11,7 @@ import type { ProductType, UserType } from './types/Types';
 import { setCurrentUser, setProduct } from './redux/appSlice';
 import { useEffect, useEffectEvent } from 'react';
 import { setBasket } from './redux/basketSlice';
+import BasketDetails from './components/BasketDetails';
 
 function App() {
 
@@ -51,6 +52,7 @@ function App() {
       <RouterConfig />
       <ToastContainer autoClose={2500} style={{ fontSize: '13px' }} />
       <Spinner />
+      <BasketDetails />
     </div>
   )
 }

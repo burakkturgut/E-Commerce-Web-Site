@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import { useDispatch, useSelector } from 'react-redux';
-import { filterProduct, setCurrentUser, setProduct } from '../redux/appSlice';
+import { filterProduct, setCurrentUser, setDrawer, setProduct } from '../redux/appSlice';
 import { toast } from 'react-toastify';
 import productServise from '../services/ProductServise';
 import type { ProductType } from '../types/Types';
@@ -44,6 +44,10 @@ function Navbar() {
         } catch (error) {
             toast.error("Filtreleme yaparken hata oluştu" + error)
         }
+    }
+
+    const openDrawer = () => {
+        dispatch(setDrawer(true))
     }
 
     return (
@@ -83,7 +87,7 @@ function Navbar() {
                         }
                         variant="standard"
                     />
-                    <Badge badgeContent={basket.length} color='warning' sx={{ margin: '0px 10px' }}>
+                    <Badge onClick={openDrawer} badgeContent={basket.length} color='warning' sx={{ margin: '0px 10px', cursor: 'pointer' }}>
                         <FaBasketShopping style={{ fontSize: '18', cursor: 'pointer' }} />
                     </Badge>
                     <Button onClick={logout} sx={{ textTransform: 'none', color: 'lightgrey' }} color="inherit">Çıkış Yap</Button>

@@ -31,5 +31,6 @@ interface RatingType {
 export interface AppSliceType {
     currentUser: UserType | null,
     loading: boolean,
+    drawer: boolean,
     product: ProductType[]
 }

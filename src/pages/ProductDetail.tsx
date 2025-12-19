@@ -38,6 +38,7 @@ function ProductDetail() {
                 count: count
             }
             dispatch(addProductToBasket(payload))
+            toast.success("Ürününüz Sepete Eklendi")
         }
     }
 
