@@ -114,9 +114,8 @@ function LoginPage() {
 
                         <div className='register-button'>
                             <Button type='submit' size='small' sx={{ textTransform: 'none', height: '28px', marginRight: '10px' }} variant='contained' color='success'>Giriş Yap</Button>
-                            <Button onClick={clear} size='small' sx={{ textTransform: 'none', height: '28px', backgroundColor: '#CDA735' }} variant='contained' >Temizle</Button>
+                            <Button onClick={() => navigate("/register")} size='small' sx={{ textTransform: 'none', height: '28px', backgroundColor: '#089784ff' }} variant='contained' >Kayıt Ol</Button>
                         </div>
-
                     </div>
                 </form>
             </div>

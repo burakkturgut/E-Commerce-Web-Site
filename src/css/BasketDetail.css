@@ -1,0 +1,59 @@
+.drawer {
+    width: 400px;
+}
+
+.drawerDivContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px 30px;
+
+}
+
+.drawerImage {
+    margin-right: 15px;
+}
+
+.drawerTitle {
+    font-family: arial;
+    font-weight: bold;
+}
+
+.drawerCount {
+    margin-right: 40px;
+}
+
+.drawerPrice {
+    font-family: arial;
+    font-size: 15px;
+    font-weight: bold;
+    width: 70px;
+}
+
+.drawerDivButton {
+    margin-left: 40px;
+}
+
+.drawerButton {
+    text-transform: none;
+    height: 25px;
+}
+
+.drawerConsult {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.drawerTotalAmount {
+    font-size: 18px;
+    font-family: arial;
+}
+
+.drawerBuyButton {
+    text-transform: none;
+    height: 25px;
+    margin-top: 20px;
+}

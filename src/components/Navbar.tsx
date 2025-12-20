@@ -15,16 +15,13 @@ import type { ProductType } from '../types/Types';
 import { FaBasketShopping } from "react-icons/fa6";
 import Badge from '@mui/material/Badge';
 import type { RootState } from '../redux/store';
-
-
-
+import '../css/Navbar.css';
 
 function Navbar() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
     const { basket } = useSelector((state: RootState) => state.basket)
-
 
     const logout = () => {
         localStorage.removeItem("currentUser")
@@ -51,7 +48,7 @@ function Navbar() {
     }
 
     return (
-        <AppBar position="static" sx={{ backgroundColor: '#047083ff' }}>
+        <AppBar position="static" className='navbarAppBar'>
             <Toolbar>
                 <IconButton
                     onClick={() => navigate("/")}
@@ -59,38 +56,35 @@ function Navbar() {
                     edge="start"
                     color="inherit"
                     aria-label="menu"
-                    sx={{ mr: 2 }}
+                    className='navbarIconButton'
                 >
                     <img src={ecommerce} width={130} height={60} />
                 </IconButton>
-                <Typography onClick={() => navigate("/")} variant="h6" component="div" sx={{ flexGrow: 1, cursor: 'pointer' }}>
+                <Typography onClick={() => navigate("/")} variant="h6" component="div" className='navbarTypography'>
                     Kapış Kapış
                 </Typography>
-                <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+                <div className='navbarDiv'>
                     <TextField
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleFilter(e)}
-                        sx={{ width: '300px', marginBottom: '25px' }}
+                        className='navbarTextField'
                         id="searchInput"
                         placeholder='Arama yapınız...'
                         slotProps={{
                             input: {
+                                className: "navbarTextFieldInput",
                                 startAdornment: (
                                     <InputAdornment position="start">
                                     </InputAdornment>
-                                ),
-                                style: {
-                                    color: 'lightgrey',
-                                    borderBottom: '1px solid lightgrey'
-                                }
+                                )
                             }
                         }
                         }
                         variant="standard"
                     />
-                    <Badge onClick={openDrawer} badgeContent={basket.length} color='warning' sx={{ margin: '0px 10px', cursor: 'pointer' }}>
-                        <FaBasketShopping style={{ fontSize: '18', cursor: 'pointer' }} />
+                    <Badge onClick={openDrawer} badgeContent={basket.length} color='warning' className='navbarBadge'>
+                        <FaBasketShopping className='navbarBasketIcon' />
                     </Badge>
-                    <Button onClick={logout} sx={{ textTransform: 'none', color: 'lightgrey' }} color="inherit">Çıkış Yap</Button>
+                    <Button onClick={logout} className='navbarButton' color="inherit">Çıkış Yap</Button>
                 </div>
             </Toolbar>
         </AppBar>

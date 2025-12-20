@@ -8,6 +8,9 @@ import { toast } from 'react-toastify';
 import categoryService from '../services/CategoryService';
 import productServise from '../services/ProductServise';
 import type { ProductType } from '../types/Types';
+import '../css/Category.css';
+
+
 
 function Category() {
 
@@ -50,7 +53,7 @@ function Category() {
     }, [])
 
     return (
-        <div style={{ marginTop: '60px', marginLeft: '20px' }}>
+        <div className='categoryDiv'>
             <FormGroup>
                 {
                     categori && categori.map((category: string, index: number) => (
