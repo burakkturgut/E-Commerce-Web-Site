@@ -80,8 +80,6 @@ Form işlemleri **Formik**, doğrulamalar ise **Yup** kullanılarak yapılmışt
 * Kullanıcı adı
 * Şifre
 * Zorunlu alan kontrolleri
-* Minimum karakter kuralları
-
 ---
 
 ##  Kurulum ve Çalıştırma
